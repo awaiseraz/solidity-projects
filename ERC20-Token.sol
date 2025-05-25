@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract CoffeeToken{
+contract Token{
 
     //global variables
     string public name;            //token name
     string public symbol;          //token symbol
-    uint8 public decimals = 18;    //18 decimals are ERC-20 token standard
+    uint8 public decimals = 18;    //18 decimals are ERC-20 Token standard
     uint256 public totalSupply;    //total supply of the token
     address public owner;          
     bool public paused;                              
