@@ -1,3 +1,2 @@
 # solidity-projects
 
-Token
