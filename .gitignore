@@ -1,0 +1,10 @@
+# Node modules
+node_modules/
+
+# Hardhat build and cache
+artifacts/
+cache/
+
+# Optional ignores
+.env
+*.log
