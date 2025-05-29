@@ -59,7 +59,7 @@ contract Token {
     ) public whenNotPaused returns (bool success) {
         require(_to != address(0), "Invalid address");
         require(_value >= 0, "Please enter the amount to transfer");
-        require(balanceOf[msg.sender] >= _value, "Issuficient Funds");
+        require(balanceOf[msg.sender] >= _value, "Issuficient funds");
         balanceOf[msg.sender] -= _value;
         balanceOf[_to] += _value;
 
