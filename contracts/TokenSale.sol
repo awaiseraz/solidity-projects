@@ -2,7 +2,10 @@
 pragma solidity ^0.8.0;
 
 interface IERC20 {
-    function mint(address _to, uint256 _value) external returns (bool success);
+    function transfer(
+        address _to,
+        uint256 _value
+    ) external returns (bool success);
 }
 
 contract TokenSale {
@@ -34,8 +37,8 @@ contract TokenSale {
         uint256 amount = msg.value / tokenPrice;
         require(amount > 0, "Not enough ETH for even 1 token");
 
-        bool success = token.mint(msg.sender, amount);
-        require(success, "Minting failed");
+        bool success = token.transfer(msg.sender, amount);
+        require(success, "transfer failed");
 
         emit TokenPurchased(msg.sender, amount, tokenPrice);
     }
@@ -49,7 +52,7 @@ contract TokenSale {
     }
 
     function setTokenPrice(uint256 _newPrice) external onlyOwner {
-        require(_newPrice > 0,"enter the correct amount");
+        require(_newPrice > 0, "enter the correct amount");
         tokenPrice = _newPrice;
     }
 
